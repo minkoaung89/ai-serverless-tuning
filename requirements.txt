@@ -1,0 +1,13 @@
+numpy==2.0.2
+pandas==2.2.2
+scikit-learn==1.6.1
+xgboost==3.0.3
+tensorflow==2.19.0
+keras==3.8.0
+prophet==1.1.7
+gym==0.26.2
+gymnasium==1.2.0
+boto3==1.40.1
+stable-baselines3[extra]==2.7.0
+shimmy>=2.0
+matplotlib==3.10.0

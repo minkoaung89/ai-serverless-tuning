@@ -42,4 +42,32 @@ maintain cost efficiency in cloud-native deployments.
 │   └── env.py                           #Custom Gym environment
 │   └── generate_workload.py             #Workload generator for synthetic traffic types
 ├── README.md
-└── LICENSE
+├── LICENSE
+├── aws_poc/
+│   ├── lambda_function.py          		#Minimal Lambda function
+│   ├── cloudwatch_metric_fetch.py          #Script that fetch cloudwatch metrics to validate 
+│   ├── README.md         					#Instructions of how to implement AWS_POC
+
+-------------------------------------------------------------------------------------------------------
+
+### How to Install & Run the Notebook
+
+### Option A — Google Colab (recommended)
+1. Open **serverless_tuning_colab.ipynb** in Colab (File → Open notebook → GitHub → paste this repo URL).
+2. *(Optional)* Runtime → **Change runtime type** → **GPU: T4**.
+3. Run the first setup cell in the notebook to install dependencies (uses `requirements.txt`).
+4. **Artifacts are preloaded:** trained models, synthetic workloads, and baseline logs are already in `data/`. 
+Running the notebook will **reuse** these to reproduce results. Training/regeneration cells are optional and may overwrite files.
+
+
+### Option B — Run Locally (Jupyter)
+**Prereqs:** Python 3.10+, Jupyter Notebook/Lab.
+```bash
+# from the repo root
+python -m venv .venv
+# macOS/Linux:
+source .venv/bin/activate
+# Windows:
+# .venv\Scripts\activate
+pip install -r requirements.txt
+jupyter notebook  # or: jupyter lab
